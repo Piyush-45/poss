@@ -1,0 +1,64 @@
+html{
+  font-size: 62.5%;
+  
+}
+
+body{
+  background: #000b1f ;
+
+}
+.app{
+  color: #00d4f0;
+  font-size: 2rem;
+}
+li{
+  list-style-type: none;
+}
+h1{
+  color: #f5369d;
+  font-size: 3rem;
+}
+.menuCard{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  width: 70%;
+  gap: 1rem;
+  /* display: ;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-inline: 10rem; */
+}
+.card{
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.price{
+  display: flex;
+
+}
+.singleItem{
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+  gap: 3rem;
+  font-size: 1.6rem;
+}
+.plus, .minus{
+  cursor: pointer;
+}
+.mainContainer{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+/* #00d4f0  === skyblue */
+/* #d0d1d9 === white */
+/* #f5369d === pink */
