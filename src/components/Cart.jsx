@@ -28,7 +28,7 @@ const Cart = () => {
       .receipt {
         width: 2in;
         margin: 0 auto;
-        padding: 10px;
+        padding: 2px;
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #fff;
