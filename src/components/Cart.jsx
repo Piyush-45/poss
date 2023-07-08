@@ -15,12 +15,14 @@ const Cart = () => {
 
   const handlePrintReceipt = () => {
     const printWindow = window.open("", "_blank");
-    printWindow.document.write("<html><head><title>The Cafe Grillzzz - Receipt</title>");
+    printWindow.document.write(
+      "<html><head><title>The Cafe Grillzzz - Receipt</title>"
+    );
     printWindow.document.write("<style>");
     printWindow.document.write(`
       body {
         font-family: Arial, sans-serif;
-        font-size: 8pt;
+        font-size: 8.5pt;
         margin: 0;
         padding: 0;
       }
@@ -88,25 +90,30 @@ const Cart = () => {
     `);
     printWindow.document.write("</style></head><body>");
     printWindow.document.write('<div class="receipt">');
-    printWindow.document.write('<div class="header"><h2>The Cafe Grillzzz</h2></div>');
-    printWindow.document.write('<ul>');
+    printWindow.document.write(
+      '<div class="header"><h2>The Cafe Grillzzz</h2><p>Shri Ram Complex, Rajnagar Extension</p></div>'
+    );
+    printWindow.document.write(
+      ''
+    );
+    printWindow.document.write("<ul>");
     for (const item of cartItems) {
       printWindow.document.write('<li class="item">');
       printWindow.document.write(`<span class="name">${item.name}</span>`);
       printWindow.document.write(`<span>Rs ${item.price}</span>`);
       printWindow.document.write(`<span>Nos ${item.quantity}</span>`);
-      printWindow.document.write('</li>');
+      printWindow.document.write("</li>");
     }
-    printWindow.document.write('</ul>');
+    printWindow.document.write("</ul>");
     printWindow.document.write('<div class="total">');
     printWindow.document.write(`Total: ${calculateTotal()}`);
-    printWindow.document.write('</div>');
+    printWindow.document.write("</div>");
     printWindow.document.write('<div class="divider"></div>');
     printWindow.document.write('<div class="footer">');
-    printWindow.document.write('<p>Thank you for your order!</p>');
-    printWindow.document.write('</div>');
-    printWindow.document.write('</div>');
-    printWindow.document.write('</body></html>');
+    printWindow.document.write("<p>Thank you for your order!</p>");
+    printWindow.document.write("</div>");
+    printWindow.document.write("</div>");
+    printWindow.document.write("</body></html>");
     printWindow.document.close();
     printWindow.print();
   };
