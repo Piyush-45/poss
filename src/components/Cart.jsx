@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import { MenuContext } from "../MenuContext";
 import "./cart.css";
-import { useReactToPrint } from "react-to-print";
-import { useRef } from "react";
-const Cart = () => {
-    const receiptRef = useRef();
 
+const Cart = () => {
   const { cartItems, clearCart } = useContext(MenuContext);
 
   const calculateTotal = () => {
@@ -18,19 +15,98 @@ const Cart = () => {
 
   const handlePrintReceipt = () => {
     const printWindow = window.open("", "_blank");
-    printWindow.document.write("<html><head><title>The Cafe Grillzzz</title></head><body>");
-    printWindow.document.write("<h2>The Cafe Grillzzz</h2>");
-    printWindow.document.write("<ul>");
+    printWindow.document.write("<html><head><title>The Cafe Grillzzz - Receipt</title>");
+    printWindow.document.write("<style>");
+    printWindow.document.write(`
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 8pt;
+        margin: 0;
+        padding: 0;
+      }
+
+      .receipt {
+        width: 2in;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      .receipt .header {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .receipt ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .receipt li {
+        margin-bottom: 5px;
+      }
+
+      .receipt .item {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .receipt .item .name {
+        display: inline-block;
+        width: 50%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .receipt .item span {
+        display: inline-block;
+        width: 25%;
+      }
+
+      .receipt .total {
+        text-align: right;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .receipt .divider {
+        margin-top: 10px;
+        border-top: 1px dashed #ccc;
+      }
+
+      .receipt .footer {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .receipt .footer p {
+        margin: 5px 0;
+      }
+    `);
+    printWindow.document.write("</style></head><body>");
+    printWindow.document.write('<div class="receipt">');
+    printWindow.document.write('<div class="header"><h2>The Cafe Grillzzz</h2></div>');
+    printWindow.document.write('<ul>');
     for (const item of cartItems) {
-      printWindow.document.write("<li>");
-      printWindow.document.write(`${item.name} - ${item.price} - Quantity: ${item.quantity}`);
-      printWindow.document.write("</li>");
+      printWindow.document.write('<li class="item">');
+      printWindow.document.write(`<span class="name">${item.name}</span>`);
+      printWindow.document.write(`<span>Rs ${item.price}</span>`);
+      printWindow.document.write(`<span>Nos ${item.quantity}</span>`);
+      printWindow.document.write('</li>');
     }
-    printWindow.document.write("</ul>");
-    printWindow.document.write("<p>");
+    printWindow.document.write('</ul>');
+    printWindow.document.write('<div class="total">');
     printWindow.document.write(`Total: ${calculateTotal()}`);
-    printWindow.document.write("</p>");
-    printWindow.document.write("</body></html>");
+    printWindow.document.write('</div>');
+    printWindow.document.write('<div class="divider"></div>');
+    printWindow.document.write('<div class="footer">');
+    printWindow.document.write('<p>Thank you for your order!</p>');
+    printWindow.document.write('</div>');
+    printWindow.document.write('</div>');
+    printWindow.document.write('</body></html>');
     printWindow.document.close();
     printWindow.print();
   };

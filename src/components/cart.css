@@ -1,14 +1,62 @@
-.cart{
+.cart {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    /* justify-content: center; */
-    color:#fff;
-    font-size: 2rem;
+    color: #fff;
+    font-size: 1rem;
     border: 2px solid #f5369d;
-    padding: 2rem;
-}
-.cartLi{
+    /* padding: 2rem; */
+    /* Additional styles */
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cartLi {
     display: flex;
+    font-size: 1.3rem;
     gap: 1.3rem;
-}
+  }
+  
+  /* Additional styles */
+/* cart.css */
+
+
+  /* Styles for the receipt */
+  /* .receipt {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .receipt h2 {
+    text-align: center;
+    font-size: 16pt;
+    margin-bottom: 10px;
+  }
+  
+  .receipt ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .receipt li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .receipt li span {
+    width: 33.33%;
+  }
+  
+  .receipt p {
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+   */
