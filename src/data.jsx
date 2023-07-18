@@ -1,4 +1,5 @@
 const  menuItems = [
+
   {
     id: 1,
     heading: "Burgers",
@@ -13,13 +14,20 @@ const  menuItems = [
   },
 
   {
-    id: 2,
+    id:2,
+    heading: "Fries",
+    names:["French Fries", " Peri peri fries"],
+    prices:["59", "69"]
+
+  },
+  {
+    id: 3,
     heading: "Garlic Lofe",
     names: ["Cheesy Garlic ", "Veggie Garlic ", "Paneer Garlic "],
     prices: ["79", "89", "99"],
   },
   {
-    id: 3,
+    id: 4,
     heading: "Beverages",
     names: [
       "Coca-Cola",
@@ -35,25 +43,25 @@ const  menuItems = [
     prices: ["19", "39", "69", "49", "99", "99", "49", "79"],
   },
   {
-    id: 4,
+    id: 6,
     heading: "Choco Lava Cake",
     names: ["Choco Lava Cake"],
     prices: ["49"],
   },
   {
-    id: 5,
+    id: 7,
     heading: "Classic veggi Meal",
     names: ["Burger/Sandwich + Fires + Coke"],
     prices: ["89"],
   },
   {
-    id: 6,
+    id: 8,
     heading: "Cheese Veggie Meal",
     names: ["Burger/Sandwich + Fires + Coke"],
     prices: ["99"],
   },
   {
-    id: 7,
+    id: 9,
     heading: "Sandwich",
     names: [
       "Paneer Delight Grilled ",
@@ -67,13 +75,13 @@ const  menuItems = [
     prices: [69, 69, 59, 49, 39, 69],
   },
   {
-    id: 8,
+    id: 10,
     heading: "Garlic Bread",
     names: ["Cheese ", "Veggie ", "Paneer "],
     prices: [69, 79, 89],
   },
   {
-    id: 9,
+    id: 11,
     heading: "Kulhad Pizza",
     names: ["Small Kulhad ", "Large Kulhad "],
     prices: [69, 79],
