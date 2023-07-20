@@ -35,7 +35,6 @@ const  menuItems = [
       "Cold Coffee",
       "Ice Tea",
       "Oreo Shake",
-      "Mirinda",
       "Kitkat Shake",
       "Classic Mint Mojito",
       "Peanut Butter Shake",
