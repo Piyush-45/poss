@@ -91,7 +91,7 @@ const Cart = () => {
     printWindow.document.write("</style></head><body>");
     printWindow.document.write('<div class="receipt">');
     printWindow.document.write(
-      '<div class="header"><h2>The Cafe Grillzzz</h2><p>Shri Ram Complex, Rajnagar Extension</p></div>'
+      '<div class="header"><h1>SA-CO</h1> <h2>The Cafe Grillzzz</h2><p>Ph: +91 8923265090</p><p>Shri Ram Complex, Rajnagar Extension</p></div>'
     );
     printWindow.document.write(
       ''
